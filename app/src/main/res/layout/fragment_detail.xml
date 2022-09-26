@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/photoCardView"
+        android:layout_width="@dimen/size_photo"
+        android:layout_height="@dimen/size_photo"
+        app:cardCornerRadius="@dimen/radius_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        android:layout_marginTop="@dimen/margin_photo">
+
+        <ImageView
+            android:id="@+id/photoMemberImageView"
+            android:layout_width='@dimen/size_photo'
+            android:layout_height='@dimen/size_photo'
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/black" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width='wrap_content'
+        android:layout_height='wrap_content'
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/photoCardView"
+        android:layout_marginTop="@dimen/margin_name" />
+
+    <TextView
+        android:id="@+id/lastNameTextView"
+        android:layout_width='wrap_content'
+        android:layout_height='wrap_content'
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextView"
+        android:layout_marginTop="@dimen/margin_last_name" />
+
+    <TextView
+        android:id="@+id/workTextView"
+        android:layout_width='wrap_content'
+        android:layout_height='wrap_content'
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lastNameTextView"
+        android:layout_marginTop="@dimen/margin_work" />
+
+    <TextView
+        android:id="@+id/giftList"
+        android:layout_width='wrap_content'
+        android:layout_height='wrap_content'
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_goneMarginRight="@dimen/margin_gift_list"
+        app:layout_goneMarginLeft="@dimen/margin_gift_list"
+        app:layout_constraintTop_toBottomOf="@+id/workTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

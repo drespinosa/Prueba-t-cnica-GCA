@@ -2,5 +2,14 @@
 <resources>
     <dimen name="margin_horizontal_card_view">16dp</dimen>
     <dimen name="margin_vertical_card_view">8dp</dimen>
+    <dimen name="margin_gift_list">20dp</dimen>
+    <dimen name="margin_work">20dp</dimen>
+    <dimen name="margin_photo">20dp</dimen>
+    <dimen name="margin_last_name">20dp</dimen>
+    <dimen name="margin_name">20dp</dimen>
+    <dimen name="size_photo">200dp</dimen>
+    <dimen name="size_photo_recycler">150dp</dimen>
+    <dimen name="size_refresh">50dp</dimen>
+    <dimen name="radius_photo">100dp</dimen>
 
 </resources>

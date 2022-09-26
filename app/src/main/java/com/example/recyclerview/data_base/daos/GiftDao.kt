@@ -1,10 +1,10 @@
-package com.example.recyclerview.base_datos.daos
+package com.example.recyclerview.data_base.daos
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.recyclerview.base_datos.tables.GiftTable
+import com.example.recyclerview.data_base.tables.GiftTable
 
 @Dao
 interface GiftDao {

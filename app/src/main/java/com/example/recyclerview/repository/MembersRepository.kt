@@ -1,24 +1,24 @@
 package com.example.recyclerview.repository
 
-import com.example.recyclerview.base_datos.MembersDatabase
+import android.util.Log
 import com.example.recyclerview.commons.toData
+import com.example.recyclerview.commons.toLocal
+import com.example.recyclerview.data_base.MemberDatabase
 import com.example.recyclerview.objects.Members
 import com.example.recyclerview.web_service.MembersApi
 
 class MembersRepository(
-    private val localData: MembersDatabase?
+    private val localData: MemberDatabase?
 ) {
-    /**
-     * Instancia de la contrucción de Retrofit
-     */
+
     private val retrofitInstance = MembersApi.getRetrofitClient()
 
     /**
      * Obtiene los datos de la tabla MembersTable
      * Con los datos recolectados se construye el objeto de tipo Members
      */
-    suspend fun getMembers(): List<Members>? {
-        val localMembers = localData?.membersDao?.getMembers()?.sortedBy { it.lastName }
+    fun getMembers(): List<Members>? {
+        val localMembers = localData?.memberDao?.getMembers()?.sortedBy { it.lastName }
         return localMembers?.map { memberTable ->
             memberTable.toLocal()
         }
@@ -29,9 +29,9 @@ class MembersRepository(
      * Dependiendo del miembro obtiene los datos correspondientes de la tabla MemberTable
      * Con los datos recolectados se construye el objeto de tipo Members
      */
-    suspend fun getDetailById(memberId: Int): Members? {
+    fun getDetailById(memberId: Int): Members? {
         val gifts = localData?.giftDao?.getMembersById(memberId)?.map { it.gift }
-        val member = localData?.membersDao?.getMemberById(memberId)?.toLocal()
+        val member = localData?.memberDao?.getMemberById(memberId)?.toLocal()
         member?.gifts = gifts
         return member
     }
@@ -41,14 +41,15 @@ class MembersRepository(
      * Si la tabla no contiene datos consume el servicio y guarda la información en las respectivas tablas
      */
     suspend fun validateData() {
-        localData?.membersDao?.countItems()?.let { count ->
+        localData?.memberDao?.countItems()?.let { count ->
             if (count > 0) {
-                count
+                return
             } else {
                 val members = retrofitInstance.getMember()
                 members.forEach {
                     val member = it.toData()
-                    localData.membersDao.insertMember(member)
+                    Log.i("Service", "$member")
+                    localData.memberDao.insertMember(member)
                     val detail = retrofitInstance.getMemberDetail(member.id.toString())
                     localData.giftDao.insertGift(detail.toData())
                 }

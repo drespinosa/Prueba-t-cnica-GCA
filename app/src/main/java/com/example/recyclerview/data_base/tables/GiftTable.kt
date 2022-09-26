@@ -1,4 +1,4 @@
-package com.example.recyclerview.base_datos.tables
+package com.example.recyclerview.data_base.tables
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

@@ -62,12 +62,6 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
 
-    //Base de datos local
-    implementation "androidx.room:room-ktx:2.3.0"
-    implementation "androidx.room:room-runtime:2.3.0"
-    testImplementation 'junit:junit:4.12'
-    kapt "androidx.room:room-compiler:2.3.0"
-
     //Coroutina
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.6'
 
@@ -78,4 +72,9 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.13.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
 
+    //BAse de datos local
+    implementation "androidx.room:room-ktx:2.3.0"
+    implementation "androidx.room:room-runtime:2.3.0"
+    testImplementation 'junit:junit:4.12'
+    kapt "androidx.room:room-compiler:2.3.0"
 }

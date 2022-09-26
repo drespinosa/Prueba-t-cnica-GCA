@@ -11,34 +11,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/ivSuperHero"
-            android:layout_width='150dp'
-            android:layout_height='150dp'
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:background="@color/black" />
+        <androidx.cardview.widget.CardView
+            tools:ignore="MissingConstraints"
+            android:id="@+id/photoCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/radius_photo">
+
+            <ImageView
+                android:id="@+id/photoMemberImageView"
+                android:layout_width='@dimen/size_photo_recycler'
+                android:layout_height='@dimen/size_photo_recycler'
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@color/black" />
+
+        </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/tvSuperHero"
+            android:id="@+id/nameTextView"
             android:layout_width='wrap_content'
             android:layout_height='wrap_content'
-            app:layout_constraintStart_toEndOf="@+id/ivSuperHero"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvrealName"
+            android:id="@+id/lastNameTextView"
             android:layout_width='wrap_content'
             android:layout_height='wrap_content'
-            app:layout_constraintStart_toEndOf="@+id/ivSuperHero"
-            app:layout_constraintTop_toBottomOf="@+id/tvSuperHero" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
 
         <TextView
-            android:id="@+id/tvpublisher"
+            android:id="@+id/workTextView"
             android:layout_width='wrap_content'
             android:layout_height='wrap_content'
-            app:layout_constraintStart_toEndOf="@+id/ivSuperHero"
-            app:layout_constraintTop_toBottomOf="@+id/tvrealName" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lastNameTextView" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
