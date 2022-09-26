@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'kotlin-android'
 }
 
 android {
@@ -37,7 +39,11 @@ android {
 }
 
 ext.picasso_version = '2.71828'
+ext.retrofit_version = '2.8.1'
 ext.retrofit_version = '2.3.0'
+ext.cardView_version = '27.1.0'
+ext.support_version = '27.1.0'
+ext.picasso_version = '2.71828'
 
 dependencies {
 
@@ -53,8 +59,14 @@ dependencies {
     implementation "com.squareup.picasso:picasso:$picasso_version"
 
     //Retrofit
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+
+    //Base de datos local
+    implementation "androidx.room:room-ktx:2.3.0"
+    implementation "androidx.room:room-runtime:2.3.0"
+    testImplementation 'junit:junit:4.12'
+    kapt "androidx.room:room-compiler:2.3.0"
 
     //Coroutina
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.6'
