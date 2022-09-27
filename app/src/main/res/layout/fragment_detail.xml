@@ -31,28 +31,30 @@
         android:id="@+id/nameTextView"
         android:layout_width='wrap_content'
         android:layout_height='wrap_content'
+        android:layout_marginTop="@dimen/margin_last_name"
+        android:textSize="@dimen/text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/photoCardView"
-        android:layout_marginTop="@dimen/margin_name" />
+        app:layout_constraintTop_toBottomOf="@+id/photoCardView" />
 
     <TextView
         android:id="@+id/lastNameTextView"
         android:layout_width='wrap_content'
         android:layout_height='wrap_content'
+        android:textSize="@dimen/text_size"
+        android:layout_marginTop="@dimen/margin_last_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameTextView"
-        android:layout_marginTop="@dimen/margin_last_name" />
+        app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
 
     <TextView
         android:id="@+id/workTextView"
         android:layout_width='wrap_content'
         android:layout_height='wrap_content'
+        android:layout_marginTop="@dimen/margin_work"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lastNameTextView"
-        android:layout_marginTop="@dimen/margin_work" />
+        app:layout_constraintTop_toBottomOf="@+id/lastNameTextView" />
 
     <TextView
         android:id="@+id/giftList"

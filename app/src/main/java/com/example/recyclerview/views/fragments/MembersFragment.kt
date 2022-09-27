@@ -30,6 +30,8 @@ class MembersFragment(val notifier: (memberId: Int) -> Unit) : Fragment() {
     private lateinit var repository: MembersRepository
     private lateinit var membersViewModel: ViewModelMembers
 
+    private var state: Boolean = false
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -56,6 +58,24 @@ class MembersFragment(val notifier: (memberId: Int) -> Unit) : Fragment() {
             loadData()
         }
 
+        binding.organizeLastNameButton.visibility = View.VISIBLE
+
+        binding.organizeLastNameButton.setOnClickListener {
+            state = true
+            membersViewModel.validateData()
+            binding.organizeLastNameButton.visibility = View.GONE
+            binding.organizeWorkButton.visibility = View.VISIBLE
+            loadData()
+        }
+
+        binding.organizeWorkButton.setOnClickListener {
+            state = false
+            binding.organizeLastNameButton.visibility = View.VISIBLE
+            binding.organizeWorkButton.visibility = View.GONE
+            membersViewModel.validateData()
+            loadData()
+        }
+
     }
 
     /**
@@ -78,6 +98,11 @@ class MembersFragment(val notifier: (memberId: Int) -> Unit) : Fragment() {
                 withContext(Dispatchers.Main) {
                     binding.refresh.isVisible = members.isEmpty()
                     initRecyclerView(members)
+                    if (state) {
+                        initRecyclerView(members.sortedBy { it.cargo })
+                    } else {
+                        initRecyclerView(members)
+                    }
                 }
             }
         }

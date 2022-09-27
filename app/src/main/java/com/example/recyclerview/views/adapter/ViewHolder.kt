@@ -14,9 +14,9 @@ class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
      *  Muestra los datos del layout
      */
     fun render(members: Members, onClickListener: (Members) -> Unit) {
-        binding.nameTextView.text = members.name
+        binding.nameTextView.text = members.nombre
         binding.lastNameTextView.text = members.lastName
-        binding.workTextView.text = members.work
+        binding.workTextView.text = members.cargo
         Glide.with(binding.photoMemberImageView.context).load(members.urlFoto)
             .into(binding.photoMemberImageView)
         itemView.setOnClickListener { onClickListener(members) }

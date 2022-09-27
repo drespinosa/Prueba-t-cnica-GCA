@@ -6,5 +6,5 @@ data class DetailMember(
     val lastName: String,
     val urlFoto: String,
     val cargo: String,
-    val lista_de_regalos: List<String>
+    val lista_de_regalos: List<String>,
 )

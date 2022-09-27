@@ -9,12 +9,18 @@ visualizar el detalle personalizado de los datos anteriormente mencionados agreg
 La app muestra la información a partir del consumo de dos servicios y contiene base de datos para la
 persistencia de la información cuando no hay internet.
 
+Cuando la lista de miembros no es cargada por el servicio, se encuentra un botón en la parte inferior
+izquierda, que al oprimirlo realiza una actualización de la lista de miembros del equipo.
+
+El botón ubicado en la parte inferior izquierda permite organizar la lista por orden alfabético filtrado
+por apellido y reorganiza por cargo.
+
 
 ## Instalación
 
 Descarga e instalación del APK
 
-## Tecnjologías utilizadas
+## Tecnologías utilizadas
 
 Retrofit: Librería para el consumo de servicios.
 Room: Librería para persistencia de la información.

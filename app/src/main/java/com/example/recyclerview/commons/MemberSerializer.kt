@@ -6,19 +6,19 @@ import com.example.recyclerview.objects.Members
 fun Members.toData(): MembersTable {
     return MembersTable(
         id = this.id,
-        name = this.name,
-        lastName = this.lastName,
-        work = this.work,
-        url = this.urlFoto
+        name = this.nombre ?: "",
+        lastName = this.lastName ?: "",
+        work = this.cargo ?: "",
+        url = this.urlFoto ?: ""
     )
 }
 
 fun MembersTable.toLocal(): Members {
     return Members(
         id = this.id,
-        name = this.name,
+        nombre = this.name,
         lastName = this.lastName,
-        work = this.work,
+        cargo = this.work,
         urlFoto = this.url
     )
 }

@@ -57,9 +57,9 @@ class DetailFragment(private val memberId: Int) : Fragment() {
         CoroutineScope(Dispatchers.IO).launch {
             membersViewModel.getLocalGiftById(memberId)?.let { member ->
                 withContext(Dispatchers.Main) {
-                    binding.nameTextView.text = member.name
+                    binding.nameTextView.text = member.nombre
                     binding.lastNameTextView.text = member.lastName
-                    binding.workTextView.text = member.work
+                    binding.workTextView.text = member.cargo
                     var gifts = ""
                     member.gifts?.forEach {
                         gifts += "\n » $it"
